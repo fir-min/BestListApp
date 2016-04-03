@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BestListApp</title>
+  <%= stylesheet_link_tag "http://www.w3schools.com/lib/w3.css"%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if user_signed_in? %>
+		<ul class="w3-navbar w3-border w3-light-grey">
+			<li><%= link_to "Home", "/", class: "w3-hover-teal" %> </li>
+			<li><%= link_to "New List", new_user_list_path, class: "w3-hover-teal"%> </li>
+			<li><%= link_to "View Lists", user_lists_path, class: "w3-hover-teal"%> </li>
+			<li><%= link_to "Log out", destroy_user_session_path, class: "w3-hover-teal", :method => :delete %> </li>
+		</ul>
+	<% else %>
+		<ul class="w3-navbar w3-border w3-light-grey">
+			<li><%= link_to "Log in", new_user_session_path, class: "w3-hover-teal"%> </li>
+			<li><%= link_to "Register", new_user_registration_path, class: "w3-hover-teal"%> </li>
+		</ul>
+
+	<% end %>
+
+<%= yield %>
+
+</body>
+</html>

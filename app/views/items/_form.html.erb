@@ -1,0 +1,6 @@
+<%= form_for([current_user, @list, @list.items.build]) do |f| %>
+  <%= f.text_field :label, class: "w3-input w3-border", placeholder: "new list item" %>
+  <%= f.submit class: "w3-btn w3-teal"%> 
+
+<% end %>
+<br>

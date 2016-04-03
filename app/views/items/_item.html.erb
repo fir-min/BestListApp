@@ -1,0 +1,4 @@
+<% if !item.nil? && !item.new_record? %>
+ 
+ 	<p class="w3-large"><%= item.label  %> | <%= link_to "Destroy", [current_user, @list, item], class: "w3-btn w3-teal",  method: :delete, data: { confirm: "Are you sure?" } %> </p>
+<% end %>

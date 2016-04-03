@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="w3-container w3-padding-jumbo">
+	<p class="w3-large">
+  <strong>Name:</strong>
+  <%= @list.title %>
+</p>
+
+<p class="w3-large">
+  <strong>Description:</strong>
+  <%= @list.description %>
+</p>
+
+<div id="form">
+	<%= render "items/form" %>
+	<div id="form">
+		
+		<%= render @list.items %>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_user_list_path(@list), class: "w3-btn w3-teal" %> 
+<%= link_to 'Back', user_lists_path, class: "w3-btn w3-teal" %>
+
+</div>

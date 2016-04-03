@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="w3-container w3-teal w3-padding-jumbo">Listing Lists</h1>
+
+<div class="w3-container w3-padding-jumbo">
+  <table class="w3-table w3-border w3-striped w3-bordered w3-hoverable w3-responsive w3-card-4">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.title %></td>
+        <td><%= list.description %></td>
+        <td><%= link_to 'Show', user_list_path(list), class: "w3-btn w3-teal" %></td>
+        <td><%= link_to 'Edit', edit_user_list_path(list), class: "w3-btn w3-teal"%></td>
+        <td><%= link_to 'Destroy', user_list_path(list), class: "w3-btn w3-teal", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+
+  
